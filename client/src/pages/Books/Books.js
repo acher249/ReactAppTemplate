@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -22,11 +21,6 @@ class Books extends Component {
 
   componentDidMount() {
     this.loadBooks();
-
-    // check to see if we are getting back the user information from firebase
-    // console.log("User ID: " + userID);
-    // console.log("User Email: " + userEmail);
-
   }
 
   loadBooks = () => {
@@ -68,9 +62,9 @@ class Books extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <Jumbotron>
-              <h1 style={{ fontSize: 25,}}>Send to Mongo DB</h1>
-            </Jumbotron>
+          <br></br>
+          <h4 style={{textAlign: "center"}} >Send to Mongo DB</h4>
+          <br></br>
             <form>
               <Input
                 value={this.state.title}
@@ -99,9 +93,9 @@ class Books extends Component {
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1 style={{ fontSize: 25}}>Data from Mongo DB</h1>
-            </Jumbotron>
+          <br></br>
+          <h4 style={{textAlign: "center"}} >Data From Mongo DB</h4>
+          <br></br>
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
